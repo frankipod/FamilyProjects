@@ -1,0 +1,14 @@
+class Solution(object):
+    def removeElements(self, head ,value):
+        if head:
+            if head.val == value and head.next == None:
+                head = None
+                return head
+                
+            elif head.val == value:
+                head.val = head.next.val
+                head.next = head.next.next
+            self.removeElements(head.next ,value)
+            
+        return head
+
